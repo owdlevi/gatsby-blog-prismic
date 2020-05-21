@@ -1,11 +1,11 @@
-const { apiEndpoint } = require('./prismic-config');
-var repo = /([^\/]+)\.prismic\.io\/graphql/.exec(apiEndpoint);
+const { apiEndpoint } = require('./prismic-config')
+var repo = /([^\/]+)\.prismic\.io\/graphql/.exec(apiEndpoint)
 
 module.exports = {
   siteMetadata: {
     title: `Gatsby Prismic Blog`,
     description: `Blog example for Gatsby & Prismic`,
-    author: `@levimykel`,
+    author: `@owdlevi`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,13 +14,15 @@ module.exports = {
       options: {
         repositoryName: repo[1], // Loads the repo name from prismic configuration
         path: '/preview',
-        previews: true,
-        pages: [{
-          type: 'Post',
-          match: '/blog/:uid',
-          path: '/blog-preview',
-          component: require.resolve('./src/templates/post.js')
-        }]
+        previews: false,
+        pages: [
+          {
+            type: 'Post',
+            match: '/blog/:uid',
+            path: '/blog-preview',
+            component: require.resolve('./src/templates/post.js')
+          }
+        ]
       }
     },
     `gatsby-plugin-sass`,
@@ -33,8 +35,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
-      },
+        icon: `src/images/favicon.png` // This path is relative to the root of the site.
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -42,11 +44,11 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+        path: `${__dirname}/src/images`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // 'gatsby-plugin-offline',
-  ],
+  ]
 }

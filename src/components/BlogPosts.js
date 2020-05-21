@@ -45,7 +45,6 @@ const PostSummary = ({ post }) => {
   const defaultTitle = 'Untitled'
 
   const sharpImage = get(post, 'featured_imageSharp.childImageSharp.fluid')
-  console.log(post)
   const blogImage = sharpImage ? <Img fluid={sharpImage} /> : <img src={post.featured_image.url} alt="" />
 
   return (
@@ -86,10 +85,15 @@ const PostSummary = ({ post }) => {
             {RichText.asText(post.title).length !== 0 ? RichText.asText(post.title) : defaultTitle}
           </h3>{' '}
         </Link>
-        <p className="blog-post-meta">
+        <div
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}>
           <time sx={{ fontSize: '12px' }}>{postDate}</time>
-          {RichText.asText(post.category.category_name)}
-        </p>
+          <span>{RichText.asText(post.category.category_name)}</span>
+        </div>
         {/* Renders a small preview of the post's text */}
         {firstParagraph(post)}
       </div>

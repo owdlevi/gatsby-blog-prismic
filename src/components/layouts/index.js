@@ -1,34 +1,44 @@
 /** @jsx jsx */
-import { ThemeProvider, jsx } from "theme-ui"
-import { StaticQuery, graphql } from "gatsby"
-import { Helmet } from "react-helmet"
-import Footer from "./Footer"
-import Header from "./Header"
-import theme from "../../theme/theme"
+import { ThemeProvider, jsx } from 'theme-ui'
+import { useStaticQuery, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
+import Footer from './Footer'
+import Header from './Header'
+import theme from '../../theme/theme'
 
-export default (props) => (
-  <StaticQuery
-    query={graphql`
-      query SiteQuery {
-        site {
-          siteMetadata {
-            title
-            description
-          }
+// export default (props) => (
+//   <StaticQuery
+//     query={graphql`
+//       query SiteQuery {
+//         site {
+//           siteMetadata {
+//             title
+//             description
+//           }
+//         }
+//       }
+//     `}
+//     render={(data) => <Layout data={data} {...props} />}
+//   />
+// )
+
+const Layout = ({ children }) => {
+  const data = useStaticQuery(graphql`
+    query SiteQuery {
+      site {
+        siteMetadata {
+          title
+          description
         }
       }
-    `}
-    render={(data) => <Layout data={data} {...props} />}
-  />
-)
-
-const Layout = (props) => {
+    }
+  `)
   // Define the meta title and description
-  const title = props.data.site.siteMetadata.title
-  const description = props.data.site.siteMetadata.description
+  const title = data.site.siteMetadata.title
+  const description = data.site.siteMetadata.description
 
   // Load the Prismic edit button
-  if (typeof window !== "undefined" && window.prismic) {
+  if (typeof window !== 'undefined' && window.prismic) {
     window.prismic.setupEditButton()
   }
 
@@ -42,12 +52,13 @@ const Layout = (props) => {
       <Header />
       <main
         sx={{
-          variant: "styles.main",
-        }}
-      >
-        {props.children}
+          variant: 'styles.main'
+        }}>
+        {children}
       </main>
       <Footer />
     </ThemeProvider>
   )
 }
+
+export default Layout

@@ -71,7 +71,6 @@ export const query = graphql`
 
 // Using the queried Blog Home document data, we render the top section
 const BlogHomeHead = ({ home }) => {
-  const avatar = { backgroundImage: 'url(' + home.image.url + ')' }
   return (
     <section
       sx={{
@@ -89,7 +88,6 @@ const BlogHomeHead = ({ home }) => {
           maxWidth: '540px'
         }}
         data-wio-id={home._meta.id}>
-        {/* <div className="blog-avatar" style={avatar}></div> */}
         <h1
           sx={{
             variant: 'styles.h1',
