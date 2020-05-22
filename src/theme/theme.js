@@ -28,17 +28,25 @@ export default {
   },
   colors: {
     text: '#0F0F0F',
+    logoColor: '#0F0F0F',
     background: '#fff',
     headerbg: '#fff',
+    cardBG: '#fff',
+    lightBG: '#f8f9fa',
     title: '#f4f7fc',
     primary: '#fafafa',
     accent: '#0F0F0F',
     accentColor: '#fff',
     modes: {
       dark: {
-        text: '#000',
-        background: 'salmon',
+        text: '#ffffff',
+        logoColor: '#ffffff',
+        background: '#000',
+        headerbg: '#272727',
+        lightBG: '#121212',
+        cardBG: '#272727',
         todobg: '#f4f7fc',
+        accent: '#162447',
         primary: 'lightskyblue'
       }
     }
@@ -58,7 +66,6 @@ export default {
     },
     header: {
       width: '100%',
-      boxShadow: '0 1px 2px 0 rgba(60,64,67,0.3), 0 2px 6px 2px rgba(60,64,67,0.15)',
       height: '64px',
       backgroundColor: 'headerbg',
       display: 'flex',
@@ -74,7 +81,6 @@ export default {
       flexWrap: 'wrap',
       alignItems: 'center',
       p: 4,
-      borderTop: '1px solid #dadce0',
       backgroundColor: 'headerbg'
     },
     main: {

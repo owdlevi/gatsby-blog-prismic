@@ -51,10 +51,11 @@ const PostSummary = ({ post }) => {
     <div
       sx={{
         width: ['100%', 'calc(50% - 20px)', 'calc(100%/3 - 20px)'],
-        backgroundColor: '#ffffff',
+        backgroundColor: 'cardBG',
         overflow: 'hidden',
         borderRadius: '5px',
-        mx: '10px'
+        mx: '10px',
+        mb: '20px'
       }}>
       <div
         sx={{
@@ -107,8 +108,7 @@ export default ({ posts }) => {
   return (
     <section
       sx={{
-        px: [5, 6],
-        backgroundColor: '#f8f9fa'
+        backgroundColor: 'lightBG'
       }}>
       <Container>
         <h2>Our Latest Posts</h2>

@@ -43,7 +43,7 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <ThemeProvider theme={theme}>
+    <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{title}</title>
@@ -57,7 +57,7 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <Footer />
-    </ThemeProvider>
+    </div>
   )
 }
 

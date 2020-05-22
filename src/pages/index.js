@@ -75,7 +75,7 @@ const BlogHomeHead = ({ home }) => {
     <section
       sx={{
         px: [5, 6],
-        backgroundColor: '#f8f9fa',
+        backgroundColor: 'lightBG',
         minHeight: ['auto', '500px'],
         display: 'flex',
         alignItems: 'center'
@@ -143,7 +143,7 @@ export default ({ data }) => {
   return (
     <Layout>
       <BlogHomeHead home={doc.node} />
-      <section>
+      <section sx={{ backgroundColor: 'cardBG' }}>
         <Container
           sx={{
             textAlign: 'center'
