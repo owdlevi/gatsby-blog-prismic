@@ -48,14 +48,18 @@ const PostSummary = ({ post }) => {
   const blogImage = sharpImage ? <Img fluid={sharpImage} /> : <img src={post.featured_image.url} alt="" />
 
   return (
-    <div
+    <Link
+      to={linkResolver(post._meta)}
       sx={{
         width: ['100%', 'calc(50% - 30px)', 'calc(100%/3 - 30px)'],
         backgroundColor: 'cardBG',
         overflow: 'hidden',
         borderRadius: '5px',
         mx: '15px',
-        mb: '20px'
+        mb: '20px',
+        textDecoration: 'none',
+        display: 'inline-block',
+        color: 'text'
       }}>
       <div
         sx={{
@@ -63,29 +67,23 @@ const PostSummary = ({ post }) => {
           height: '250px',
           overflow: 'hidden'
         }}>
-        <Link to={linkResolver(post._meta)}>{blogImage}</Link>
+        {blogImage}
       </div>
       <div
         sx={{
           p: [3, 4]
         }}>
-        <Link
-          to={linkResolver(post._meta)}
+        <h3
           sx={{
-            textDecoration: 'none'
+            color: 'text',
+            fontSize: [2, 3],
+            fontWeight: '500',
+            mt: 0,
+            mb: [2, 3]
           }}>
-          <h3
-            sx={{
-              color: 'text',
-              fontSize: [2, 3],
-              fontWeight: '500',
-              mt: 0,
-              mb: [2, 3]
-            }}>
-            {/* We render a link to a particular post using the linkResolver for the url and its title */}
-            {RichText.asText(post.title).length !== 0 ? RichText.asText(post.title) : defaultTitle}
-          </h3>{' '}
-        </Link>
+          {/* We render a link to a particular post using the linkResolver for the url and its title */}
+          {RichText.asText(post.title).length !== 0 ? RichText.asText(post.title) : defaultTitle}
+        </h3>{' '}
         <div
           sx={{
             display: 'flex',
@@ -93,12 +91,11 @@ const PostSummary = ({ post }) => {
             alignItems: 'center'
           }}>
           <time sx={{ fontSize: '12px' }}>{postDate}</time>
-          <span>{RichText.asText(post.category.category_name)}</span>
         </div>
         {/* Renders a small preview of the post's text */}
         {firstParagraph(post)}
       </div>
-    </div>
+    </Link>
   )
 }
 

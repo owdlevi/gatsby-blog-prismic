@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <Helmet>
+        <html lang="en-gb" />
         <meta charSet="utf-8" />
         <title>{title}</title>
         <meta name="description" content={description} />
