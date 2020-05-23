@@ -16,6 +16,7 @@ module.exports = {
         repositoryName: repo[1], // Loads the repo name from prismic configuration
         path: '/preview',
         previews: false,
+        omitPrismicScript: true,
         pages: [
           {
             type: 'Post',
