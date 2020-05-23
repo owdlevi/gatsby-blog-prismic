@@ -89,19 +89,50 @@ const PostSlices = ({ slices }) => {
 const PostBody = ({ blogPost }) => {
   const titled = blogPost.title.length !== 0
   return (
-    <section>
-      <Container>
-        <div className="container post-header">
-          <div className="back">
-            <Link to="/">back to list</Link>
-          </div>
+    <article>
+      <div
+        sx={{
+          px: [5, 6],
+          backgroundColor: 'lightBG',
+          minHeight: ['auto', '400px'],
+          display: 'flex',
+          alignItems: 'center'
+        }}>
+        <Container
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            flexFlow: 'column',
+            maxWidth: '840px',
+            py: [4, 6]
+          }}>
           {/* Render the edit button */}
-          <h1 data-wio-id={blogPost._meta.id}>{titled ? RichText.asText(blogPost.title) : 'Untitled'}</h1>
-        </div>
-        {/* Go through the slices of the post and render the appropiate one */}
+          <h1
+            data-wio-id={blogPost._meta.id}
+            sx={{
+              variant: 'styles.h1',
+              mt: 0,
+              fontSize: [4, 5, 6],
+              textAlign: 'center'
+            }}>
+            {titled ? RichText.asText(blogPost.title) : 'Untitled'}
+          </h1>
+          <p
+            sx={{
+              fontSize: [2, 3, 4],
+              textAlign: 'center',
+              my: [3, 4]
+            }}>
+            All good SEO campaigns aim to increase organic traffic, hoping that businesses will see a boost in profits as more customers
+            visit the website.
+          </p>
+        </Container>
+      </div>
+      {/* Go through the slices of the post and render the appropiate one */}
+      <Container>
         <PostSlices slices={blogPost.body} />
       </Container>
-    </section>
+    </article>
   )
 }
 

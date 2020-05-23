@@ -50,11 +50,11 @@ const PostSummary = ({ post }) => {
   return (
     <div
       sx={{
-        width: ['100%', 'calc(50% - 20px)', 'calc(100%/3 - 20px)'],
+        width: ['100%', 'calc(50% - 30px)', 'calc(100%/3 - 30px)'],
         backgroundColor: 'cardBG',
         overflow: 'hidden',
         borderRadius: '5px',
-        mx: '10px',
+        mx: '15px',
         mb: '20px'
       }}>
       <div

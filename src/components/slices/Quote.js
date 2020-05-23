@@ -10,13 +10,11 @@ export default ({ slice }) => (
         display: 'inline-block',
         fontStyle: 'italic',
         fontSize: '24px',
-        color: '#868686',
-        ':before': {
-          content: '"« "'
-        },
-        ':after': {
-          content: '" »"'
-        }
+        color: 'text',
+        borderLeft: '5px solid',
+        borderColor: 'text',
+        mx: [3, 5, 6],
+        px: [3, 4]
       }}>
       {RichText.asText(slice.primary.quote)}
     </blockquote>

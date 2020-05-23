@@ -50,7 +50,6 @@ const Header = () => {
                 </g>
               </g>
             </svg>
-
             <span
               sx={{
                 position: 'absolute',

@@ -7,7 +7,16 @@ import { RichText } from 'prismic-reactjs'
 const DefaultImage = ({ slice }) => (
   <div className="post-image container">
     <figcaption className="block-img">
-      <img src={slice.primary.image.url} alt={slice.primary.image.alt} />
+      <img
+        sx={{
+          width: '100%',
+          maxWidth: '100%',
+          display: 'inline-block',
+          objectFit: 'cover'
+        }}
+        src={slice.primary.image.url}
+        alt={slice.primary.image.alt}
+      />
       {slice.primary.caption && RichText.asText(slice.primary.caption) !== '' ? (
         <figcaption
           sx={{
@@ -15,7 +24,7 @@ const DefaultImage = ({ slice }) => (
             textAlign: 'center',
             fontStyle: 'italic',
             fontSize: '14px',
-            color: '#949494'
+            color: 'text'
           }}>
           {RichText.asText(slice.primary.caption)}
         </figcaption>
@@ -36,7 +45,7 @@ const EmphasizedImage = ({ slice }) => (
             textAlign: 'center',
             fontStyle: 'italic',
             fontSize: '14px',
-            color: '#949494'
+            color: 'text'
           }}>
           {RichText.asText(slice.primary.caption)}
         </figcaption>
@@ -56,7 +65,7 @@ const FullWidthImage = ({ slice }) => (
             textAlign: 'center',
             fontStyle: 'italic',
             fontSize: '14px',
-            color: '#949494'
+            color: 'text'
           }}>
           {RichText.asText(slice.primary.caption)}
         </span>

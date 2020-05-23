@@ -71,7 +71,6 @@ export default {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'space-between',
-      px: 4,
       position: 'fixed',
       top: 0,
       zIndex: 100
