@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 import Layout from '../components/layouts'
+import HeroFeatured from '../components/Hero/HeroFeatured'
 import BlogPosts from '../components/BlogPosts'
 
 // Query for the Blog Home content in Prismic
@@ -75,7 +76,7 @@ const BlogHomeHead = ({ home }) => {
     <section
       sx={{
         px: [5, 6],
-        backgroundColor: 'lightBG',
+
         minHeight: ['auto', '500px'],
         display: 'flex',
         alignItems: 'center'

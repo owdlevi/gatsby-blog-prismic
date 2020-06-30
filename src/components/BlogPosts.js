@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Container } from 'theme-ui'
-import { Link } from 'gatsby'
+import AniLink from 'gatsby-plugin-transition-link/AniLink'
 import Img from 'gatsby-image'
 import get from 'lodash/get'
 import { RichText, Date } from 'prismic-reactjs'
@@ -48,7 +48,10 @@ const PostSummary = ({ post }) => {
   const blogImage = sharpImage ? <Img fluid={sharpImage} /> : <img src={post.featured_image.url} alt="" />
 
   return (
-    <Link
+    <AniLink
+      paintDrip
+      duration={1}
+      hex="#f6c90e"
       to={linkResolver(post._meta)}
       sx={{
         width: ['100%', 'calc(50% - 30px)', 'calc(100%/3 - 30px)'],
@@ -95,7 +98,7 @@ const PostSummary = ({ post }) => {
         {/* Renders a small preview of the post's text */}
         {firstParagraph(post)}
       </div>
-    </Link>
+    </AniLink>
   )
 }
 

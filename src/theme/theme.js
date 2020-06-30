@@ -30,12 +30,12 @@ export default {
     text: '#0F0F0F',
     logoColor: '#0F0F0F',
     background: '#fff',
-    headerbg: '#fff',
+    headerbg: '#f6c90e',
     cardBG: '#fff',
-    lightBG: '#f8f9fa',
+    lightBG: '#f6c90e',
     title: '#f4f7fc',
     primary: '#fafafa',
-    accent: '#0F0F0F',
+    accent: '#f6c90e',
     accentColor: '#fff',
     modes: {
       dark: {
@@ -94,14 +94,13 @@ export default {
       color: 'text'
     },
     ctabutton: {
-      color: 'text',
       borderRadius: '3px',
       height: '56px',
       display: 'inline-flex',
       letterSpacing: '1px',
       outline: 0,
       backgroundColor: 'accent',
-      color: 'accentColor',
+      color: 'text',
       p: 3,
       textTransform: 'uppercase',
       fontSize: 1,
@@ -114,6 +113,7 @@ export default {
       whiteSpace: 'nowrap',
       border: 0,
       cursor: 'pointer',
+      boxShadow: '0 2px 4px -1px rgba(0,0,0,0.2), 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.06)',
       ':hover': {
         outline: 'none',
         textDecoration: 'none',

@@ -21,8 +21,8 @@ const Layout = ({ children }) => {
   const description = data.site.siteMetadata.description
 
   // Load the Prismic edit button
-  if (typeof window !== 'undefined' && window.prismic !== 'undefined' && window.prismic.setupEditButton !== 'undefined') {
-    // window.prismic.setupEditButton()
+  if (typeof window !== 'undefined' && window.prismic !== 'undefined') {
+    window.prismic.setupEditButton()
   }
 
   return (

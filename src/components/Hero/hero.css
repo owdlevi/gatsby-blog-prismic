@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+}
+.wrapper::before {
+  content: '';
+  display: block;
+  position: fixed;
+  width: 300%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  border-radius: 100%;
+  transform: translateX(-50%) skewY(-8deg);
+  background-color: #f6c90e;
+  z-index: -1;
+  animation: wave 8s ease-in-out infinite alternate;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-60%) skew(0deg, -8deg);
+  }
+
+  100% {
+    transform: translateX(-40%) skew(8deg, -4deg);
+  }
+}

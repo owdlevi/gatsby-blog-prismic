@@ -16,7 +16,7 @@ module.exports = {
         repositoryName: repo[1], // Loads the repo name from prismic configuration
         path: '/preview',
         previews: false,
-        omitPrismicScript: true,
+        // omitPrismicScript: true,
         pages: [
           {
             type: 'Post',
@@ -48,6 +48,12 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`
       }
+    },
+    {
+      resolve: 'gatsby-plugin-transition-link'
+      // options: {
+      //   layout: require.resolve(`./src/components/layouts/`)
+      // }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
